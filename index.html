@@ -1,0 +1,95 @@
+<html>
+	<head>
+	<title>It's the Birthday Countdown!</title>
+	<script type = "text/javascript" src = "jquery-2.1.1.min.js"></script>
+	</head>
+
+	<style>
+		body
+		{
+			background-color: #8C2703;
+			color: #A6877C;
+		}
+		#image img
+		{
+			width: 600px;
+			-moz-box-shadow: 5px 5px 1px #9000E8;
+			-webkit-box-shadow: 5px 5px 1px #9000E8;
+			box-shadow: 5px 5px 1px #9000E8;
+			margin-bottom:10px;
+
+
+		}
+		#image:hover
+		{
+			cursor: pointer;
+		}
+		#image
+		{
+			display: block;
+			margin-left:auto;
+			margin-right:auto;
+			width:600px;
+		}
+		#footer
+		{
+			display: block;
+			margin-left:auto;
+			margin-right:auto;
+			width:600px;
+			text-align: center;
+			font-size:16pt;
+		}
+		#countdown
+		{
+			font-size:24pt;
+			width:600px;
+			margin-left:auto;
+			margin-right:auto;
+			margin-bottom:10px;
+			margin-top:10px;
+			text-align: center;
+		}
+		#musicPlayer
+		{
+			width:600px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		audio
+		{
+			width:600px;
+			background-color: #9000E8;
+			margin-bottom:10px;
+		}
+	</style>
+
+	<body>
+		<div id ="countdown"></div>
+		<div id = "image"><img src = ""></div>
+
+		<div id = "musicPlayer">
+			
+		</div>
+
+		<div id = "footer">
+			Check back for updates!
+		</div>
+	</body>
+	<script>
+
+	var birthday = new Date("Septmeber 30, 2014 00:00:00")
+	var today = new Date();
+	var img = Math.floor(Math.random() * (34 - 1 + 1)) + 1;
+	var track = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+	img += ".jpg"
+	$('#image img').attr('src',img);
+	$('#countdown').text(birthday.getDate() - today.getDate() + " days left!");
+	$('#musicPlayer').append('<audio controls autoplay loop><source src="music/'+ track +'.mp3" type="audio/mp3">You need to use an updated browser to get all the features</audio>');
+
+	$('#image').click(function(){
+		location.reload();
+	})
+	</script>
+<!-- I see you're looking for easter eggs! Well this is the first one. This page will change over time. Check back frequently for updates and more easter eggs! If you can find all the easter eggs there is a prize involved -->
+</html>
